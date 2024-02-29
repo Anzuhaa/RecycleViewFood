@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:orientation="horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ebebeb"
+    >
+
+    <ImageView
+        android:id="@+id/Foodicon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginRight="8dp"
+        android:layout_centerVertical="true"
+        />
+
+
+    <TextView
+        android:id="@+id/tvFoodname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@id/Foodicon"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Food Name"
+        android:textSize="24dp"
+        android:textColor="#5f5f5f"/>
+
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvFoodname"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@id/Foodicon"
+        android:fontFamily="@font/montserrat_medium"
+        android:text="Description"
+        android:textSize="16dp"
+        android:textColor="#5f5f5f"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/Foodicon"
+        android:background="#000000"/>
+
+
+
+
+</RelativeLayout>
