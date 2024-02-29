@@ -10,6 +10,7 @@
     >
 
     <ImageView
+        android:src="@mipmap/ic_launcher"
         android:id="@+id/Foodicon"
         android:layout_width="110dp"
         android:layout_height="110dp"
@@ -48,8 +49,5 @@
         android:layout_height="1dp"
         android:layout_below="@id/Foodicon"
         android:background="#000000"/>
-
-
-
 
 </RelativeLayout>
