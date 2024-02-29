@@ -4,6 +4,7 @@ public class item {
 
     String name;
     String description;
+
      int image;
 
     public item(String name, String description, int image) {

@@ -18,5 +18,6 @@ public class ViewHolder extends RecyclerView.ViewHolder {
         foodIcon = itemView.findViewById(R.id.Foodicon);
         foodName = itemView.findViewById(R.id.tvFoodname);
         foodDescription = itemView.findViewById(R.id.tvDescription);
+
     }
 }
