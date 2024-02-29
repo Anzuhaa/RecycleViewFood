@@ -27,9 +27,10 @@ public class Adapter extends RecyclerView.Adapter<ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-    holder.foodName.setText(items.get(position).getName());
-    holder.foodDescription.setText(items.get(position).getDescription());
-    holder.foodIcon.setImageResource(items.get(position).getImage());
+    item ramen = items.get(position);
+    holder.foodName.setText(ramen.getName());
+    holder.foodDescription.setText(ramen.getDescription());
+    holder.foodIcon.setImageResource(ramen.getImage());
     }
 
     @Override
