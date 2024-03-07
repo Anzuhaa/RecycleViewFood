@@ -1,12 +1,12 @@
 package com.example.recycleviewfood;
 
-public class modelRamen {
+public class item {
 
     String name;
     String description;
-     int image;
+     String image;
 
-    public modelRamen(String name, String description, int image) {
+    public item(String name, String description, String image) {
         this.name = name;
         this.description = description;
         this.image = image;
@@ -16,7 +16,7 @@ public class modelRamen {
     public String getDescription() {
         return description;
     }
-    public int getImage() {
+    public String getImage() {
         return image;
     }
 }

@@ -6,48 +6,61 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#ebebeb"
+    android:layout_marginRight="8dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/layout_background"
     >
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Foodcard"
+        app:cardCornerRadius="16dp"
+        android:layout_margin="8dp">
 
     <ImageView
         android:src="@mipmap/ic_launcher"
         android:id="@+id/Foodicon"
-        android:layout_width="110dp"
-        android:layout_height="110dp"
-        android:layout_marginRight="8dp"
+        android:layout_width="144dp"
+        android:layout_height="144dp"
         android:layout_centerVertical="true"
         />
+    </androidx.cardview.widget.CardView>
+
 
 
     <TextView
-        android:id="@+id/tvFoodname"
+        android:id="@+id/tvNameItem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toEndOf="@id/Foodicon"
+        android:layout_toEndOf="@id/Foodcard"
         android:fontFamily="@font/montserrat_bold"
-        android:text="Food Name"
+        android:text="Name Items"
         android:textSize="24dp"
-        android:textColor="#5f5f5f"
-        android:layout_marginRight="8dp"/>
+        android:layout_marginTop="8dp"
+        android:paddingLeft="16dp"
+        android:textColor="#7c7e8b"
+        android:background="@drawable/textview_background"
+        android:layout_marginRight="8dp" />
 
 
     <TextView
-        android:id="@+id/tvDescription"
+        android:id="@+id/tvDescriptionItem"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tvFoodname"
+        android:layout_height="100dp"
+        android:layout_below="@id/tvNameItem"
         android:layout_marginTop="4dp"
-        android:layout_toEndOf="@id/Foodicon"
+        android:layout_toEndOf="@id/Foodcard"
         android:fontFamily="@font/montserrat_medium"
         android:text="Description"
         android:textSize="16dp"
-        android:textColor="#5f5f5f"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="8dp"
+        android:textColor="#7c7e8b"
+        android:background="@drawable/textview_background"
         android:layout_marginRight="8dp"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_below="@id/Foodicon"
-        android:background="#000000"/>
 
 </RelativeLayout>

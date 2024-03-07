@@ -10,18 +10,19 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.List;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
     Context context;
-    List<modelRamen> modelRamenList;
+    List<com.example.recycleviewfood.item> item;
     private ItemClickListener mClickListener;
-    ItemClickListener itemClickListener;
 
-    public Adapter(Context context, List<modelRamen> modelRamen) {
+    public Adapter(Context context, List<com.example.recycleviewfood.item> item) {
         this.context = context;
-        this.modelRamenList = modelRamen;
+        this.item = item;
     }
 
     @NonNull
@@ -32,48 +33,42 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        modelRamen ramen = modelRamenList.get(position);
+        Glide.with(new View(context)).load(item.get(position).getImage()).into(holder.foodIcon);
+        com.example.recycleviewfood.item ramen = item.get(position);
         holder.foodName.setText(ramen.getName());
         holder.foodDescription.setText(ramen.getDescription());
-        holder.foodIcon.setImageResource(ramen.getImage());
     }
     @Override
     public int getItemCount() {
-        return modelRamenList.size();
+        return item.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        ItemClickListener mClickListener;
         ImageView foodIcon;
         TextView foodName, foodDescription;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             foodIcon = itemView.findViewById(R.id.Foodicon);
-            foodName = itemView.findViewById(R.id.tvFoodname);
-            foodDescription = itemView.findViewById(R.id.tvDescription);
+            foodName = itemView.findViewById(R.id.tvNameItem);
+            foodDescription = itemView.findViewById(R.id.tvDescriptionItem);
 
             itemView.setOnClickListener(this);
         }
-    @Override
-    public void onClick(View v) {
-        if (mClickListener != null) mClickListener.onItemClick(v, getAdapterPosition());
+        @Override
+        public void onClick(View v) {
+            if (mClickListener != null) mClickListener.onItemClick(v, getBindingAdapterPosition());
+        }
     }
-}
-    modelRamen getItem(int id) {
-        return modelRamenList.get(id);
+
+
+    item getItem(int id) {
+        return item.get(id);
     }
-    public void setClickListener(MainActivity mainActivity) {
+    public void setClickListener(ItemClickListener itemClickListener) {
         this.mClickListener = itemClickListener;
     }
     public interface ItemClickListener {
         void onItemClick(View view, int position);
     }
 }
-
-
-
-
-
-
-
